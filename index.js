@@ -34,12 +34,21 @@ JSBar.style.width = zadanaUrovenJS + "%"
 */
 
 //Funkce
-const updateSkill = (idElement, level) => {
+
+const skillHTML = Number(Math.round(prompt("Zadej úrovni svých dovedností v HTML na škále od 0 - 100")))
+const skillCSS = Number(Math.round(prompt("Zadej úrovni svých dovedostí v CSS na škále od 0 - 100")))
+const skillJS = Number(Math.round(prompt("Zadej úrovni svých dovedností v JavaScriptu na škále od 0 - 100")))
+
+const updateSkill = (idElement,level ) => {
+    
     const hodnota = document.getElementById(idElement) 
     const value = document.querySelector('.skill__value') 
     value.textContent = level + " / 100"
     const bar = document.querySelector('.skill__progress')
     bar.style.width = level + "%"
+    console.log(level)
 }
 
-updateSkill(skill3, 74)
+updateSkill("skill1", skillHTML)
+updateSkill("skill2", skillCSS)
+updateSkill("skill3", skillJS)
